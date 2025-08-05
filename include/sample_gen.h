@@ -3,6 +3,8 @@
 
 #include <base_layer.h>
 
+c_linkage_begin
+
 typedef S16 WAV_Sample;
 
 #define WAV_SAMPLE_AMPLITUDE  MAX_S16
@@ -31,5 +33,7 @@ bool WAV_BufferAppendSineWave(WAV_Buffer *buffer, F64 amplitude, F64 frequency, 
 bool WAV_BufferAppendBrownNoise(WAV_Buffer *buffer, F64 scale, F64 duration);
 
 bool WAV_BufferSaveToFile(WAV_Buffer *buffer, const char *filename);
+
+c_linkage_end
 
 #endif
