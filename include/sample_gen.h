@@ -16,6 +16,8 @@ typedef S16 WAV_Sample;
 WAV_Sample WAV_SampleFromValue(F64 value);
 F64 WAV_SampleToValue(WAV_Sample sample);
 
+WAV_Sample WAV_SampleCombine(WAV_Sample first, WAV_Sample second);
+
 typedef struct WAV_Buffer
 {
   MEM_Arena *arena;

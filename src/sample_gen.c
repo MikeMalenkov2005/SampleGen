@@ -16,6 +16,12 @@ F64 WAV_SampleToValue(WAV_Sample sample)
   return ((F64)sample - (F64)WAV_SAMPLE_OFFSET) / (F64)WAV_SAMPLE_AMPLITUDE;
 }
 
+WAV_Sample WAV_SampleCombine(WAV_Sample first, WAV_Sample second)
+{
+  S32 combined = (S32)first + second;
+  return (WAV_Sample)Clamp(MIN_S16, combined, MAX_S16);
+}
+
 static const U32 WAV_CapacityIncrement = MEM_FastAlignUp(sizeof(WAV_Sample), MEM_ARENA_ALIGNMENT) / sizeof(WAV_Sample);
 
 WAV_Buffer WAV_BufferInit(MEM_Arena *arena, U32 rate)
