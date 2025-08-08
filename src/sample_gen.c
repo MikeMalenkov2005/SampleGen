@@ -75,7 +75,7 @@ bool WAV_BufferAppendSineWave(WAV_Buffer *buffer, F64 amplitude, F64 frequency, 
         offset = value - WAV_VALUE_MIN;
         value = WAV_VALUE_MIN;
       }
-      if (value < WAV_VALUE_MAX)
+      if (value > WAV_VALUE_MAX)
       {
         offset = value - WAV_VALUE_MAX;
         value = WAV_VALUE_MAX;
